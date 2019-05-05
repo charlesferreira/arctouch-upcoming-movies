@@ -8,11 +8,13 @@ $mat-sm: screen and (min-width: $layout-breakpoint-sm) and (max-width: $layout-b
 $mat-md: screen and (min-width: $layout-breakpoint-md) and (max-width: $layout-breakpoint-lg - 1);
 $mat-lg: screen and (min-width: $layout-breakpoint-lg) and (max-width: $layout-breakpoint-xl - 1);
 $mat-xl: screen and (min-width: $layout-breakpoint-xl);
-$mat-lt-sm: screen and (max-width: 599px);
-$mat-lt-md: screen and (max-width: 959px);
-$mat-lt-lg: screen and (max-width: 1279px);
-$mat-lt-xl: screen and (max-width: 1919px);
-$mat-gt-xs: screen and (min-width: 600px); 
-$mat-gt-sm: screen and (min-width: 960px);
-$mat-gt-md: screen and (min-width: 1280px);
-$mat-gt-lg: screen and (min-width: 1920px);
+
+$mat-lt-sm: screen and (max-width: $layout-breakpoint-sm - 1);
+$mat-lt-md: screen and (max-width: $layout-breakpoint-md - 1);
+$mat-lt-lg: screen and (max-width: $layout-breakpoint-lg - 1);
+$mat-lt-xl: screen and (max-width: $layout-breakpoint-xl - 1);
+
+$mat-gt-xs: screen and (min-width: $layout-breakpoint-sm); 
+$mat-gt-sm: screen and (min-width: $layout-breakpoint-md);
+$mat-gt-md: screen and (min-width: $layout-breakpoint-lg);
+$mat-gt-lg: screen and (min-width: $layout-breakpoint-xl);

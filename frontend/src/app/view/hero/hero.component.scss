@@ -1,6 +1,6 @@
-@import '../../colors';
-@import '../../variables';
-@import '../../mixins';
+@import '../../../colors';
+@import '../../../variables';
+@import '../../../mixins';
 
 @function bg($width) {
   $base-url: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&q=80';
