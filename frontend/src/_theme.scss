@@ -10,8 +10,16 @@ $custom-typography: mat-typography-config(
 @include mat-core($custom-typography);
 
 // Colors
+$movies-primary: mat-palette($mat-grey, A100);
+$movies-secondary: mat-palette($mat-pink);
+$movies-theme: mat-light-theme($movies-primary, $movies-secondary);
+
+@include angular-material-theme($movies-theme);
+
 $hero-primary: mat-palette($mat-grey, A100);
 $hero-secondary: mat-palette($mat-pink);
 $hero-theme: mat-dark-theme($hero-primary, $hero-secondary);
 
-@include angular-material-theme($hero-theme);
+app-hero {
+  @include angular-material-theme($hero-theme);
+}

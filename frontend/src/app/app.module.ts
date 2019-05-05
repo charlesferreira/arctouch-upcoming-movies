@@ -3,13 +3,14 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AngularMaterialModule } from './angular-material.module';
 import { AppComponent } from './app.component';
-import { HeroComponent } from './views/hero/hero.component';
-import { SearchBoxComponent } from './views/search-box/search-box.component';
+import { AngularMaterialModule } from './lib/angular-material.module';
+import { HeroComponent } from './view/hero/hero.component';
+import { SearchBoxComponent } from './view/search-box/search-box.component';
+import { MovieListComponent } from './view/movie-list/movie-list.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchBoxComponent, HeroComponent],
+  declarations: [AppComponent, SearchBoxComponent, HeroComponent, MovieListComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
