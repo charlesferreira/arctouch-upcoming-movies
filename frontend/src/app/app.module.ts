@@ -4,17 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SearchBoxComponent } from './search-box/search-box.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AngularMaterialModule
-  ],
+  declarations: [AppComponent, SearchBoxComponent],
+  imports: [BrowserModule, BrowserAnimationsModule, AngularMaterialModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
