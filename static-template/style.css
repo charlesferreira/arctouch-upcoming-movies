@@ -52,24 +52,21 @@ body {
 
 .hero-content {
   margin: 0 auto;
-  max-width: 320px;
+  max-width: none;
+  padding: 20px;
 }
 
 .hero-content h1 {
-  text-align: center;
+  text-align: left;
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 250%;
   color: #fff;
 }
 
-.hero-content h1 br {
-  display: none;
-}
-
 .hero-content p {
   margin-top: 1rem;
-  text-align: center;
+  text-align: left;
   font-family: "Raleway", sans-serif;
   font-weight: 300;
   font-size: 120%;
@@ -138,6 +135,7 @@ body {
 
   .hero-content {
     max-width: 540px;
+    padding: 20px;
   }
 
   .search-box {
@@ -164,16 +162,10 @@ body {
   }
 
   .hero-content h1 {
-    text-align: left;
     font-size: 300%;
   }
 
-  .hero-content h1 br {
-    display: block;
-  }
-
   .hero-content p {
-    text-align: left;
     font-size: 150%;
   }
 
