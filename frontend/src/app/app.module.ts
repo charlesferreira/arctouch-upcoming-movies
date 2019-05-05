@@ -5,9 +5,10 @@ import { NgModule } from '@angular/core';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchBoxComponent } from './search-box/search-box.component';
+import { HeroComponent } from './hero/hero.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchBoxComponent],
+  declarations: [AppComponent, SearchBoxComponent, HeroComponent],
   imports: [BrowserModule, BrowserAnimationsModule, AngularMaterialModule],
   providers: [],
   bootstrap: [AppComponent]
