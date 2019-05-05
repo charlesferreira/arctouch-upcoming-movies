@@ -26,6 +26,7 @@ body {
 }
 
 .hero .logo {
+  display: none;
   position: absolute;
   top: 15px;
   width: 50px;
