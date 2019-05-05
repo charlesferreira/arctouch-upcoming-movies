@@ -124,3 +124,55 @@ body {
   color: #fff;
   font-size: 300%;
 }
+
+/* SMARTPHONE LANDSCAPE */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .hero {
+    background: url("https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80");
+  }
+
+  .hero .logo {
+    top: 15px;
+    width: 50px;
+  }
+
+  .hero-content {
+    margin: 0 auto;
+    max-width: 540px;
+  }
+
+  .hero-content h1 {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 250%;
+  }
+
+  .hero-content h1 br {
+    display: none;
+  }
+
+  .hero-content p {
+    text-align: center;
+    font-size: 120%;
+  }
+
+  .search-box {
+    margin-top: 3rem;
+  }
+
+  .search-box input {
+    padding: 2%;
+  }
+
+  .search-box-go .material-icons {
+    font-size: 250%;
+  }
+}
+
+/* TABLET PORTRAIT */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+}
+
+/* TABLET PORTRAIT / DESKTOP */
+@media screen and (min-width: 1024px) {
+}
