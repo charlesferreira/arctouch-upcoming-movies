@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,100i,300,300i,600");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+}
+
+.hero {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  background: url("https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=1015&q=80");
+  display: table;
+  top: 0;
+  background-size: cover;
+  background-position: top center;
+}
+
+.hero .logo {
+  position: absolute;
+  top: 15px;
+  width: 50px;
+  z-index: 2;
+}
+
+.hero-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(133, 0, 32, 0.85);
+  position: absolute;
+  z-index: 1;
+}
+
+.hero-inner {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  max-width: none;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  margin: 0 auto;
+  max-width: 320px;
+}
+
+.hero-content h1 {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 250%;
+  color: #fff;
+}
+
+.hero-content p {
+  margin-top: 1rem;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-size: 120%;
+  color: #fff;
+}
+
+.search-box {
+  position: relative;
+  width: 100%;
+  margin-top: 5rem;
+}
+
+.search-box input {
+  box-sizing: border-box;
+  width: 100%;
+  border: 2px solid #fff;
+  padding: 5%;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 100%;
+  color: #fff;
+  background: transparent;
+}
+
+.search-box input:focus {
+  outline: none;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.search-box input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-box-go {
+  position: absolute;
+  color: #fff;
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+
+.search-box-go button {
+  border: none;
+  height: 100%;
+  padding: 10px 10px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.search-box-go button:focus {
+  outline: none;
+}
+
+.search-box-go .material-icons {
+  display: inline;
+  color: #fff;
+  font-size: 300%;
+}
