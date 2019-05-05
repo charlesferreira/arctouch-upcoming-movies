@@ -1,0 +1,45 @@
+@import 'variables';
+
+@mixin xs {
+  @media #{$mat-lt-sm} {
+    @content;
+  }
+}
+@mixin sm {
+  @media #{$mat-gt-xs} {
+    @content;
+  }
+}
+@mixin md {
+  @media #{$mat-gt-sm} {
+    @content;
+  }
+}
+@mixin lg {
+  @media #{$mat-gt-md} {
+    @content;
+  }
+}
+@mixin xl {
+  @media #{$mat-gt-lg} {
+    @content;
+  }
+}
+
+@mixin responsive($property, $xs, $sm: $xs, $md: $sm, $lg: $md, $xl: $lg) {
+  @include xs {
+    #{$property}: #{$xs};
+  }
+  @include sm {
+    #{$property}: #{$sm};
+  }
+  @include md {
+    #{$property}: #{$md};
+  }
+  @include lg {
+    #{$property}: #{$lg};
+  }
+  @include xl {
+    #{$property}: #{$xl};
+  }
+}
