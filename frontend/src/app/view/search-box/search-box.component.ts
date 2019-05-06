@@ -7,7 +7,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class SearchBoxComponent implements OnInit {
-  value: string;
+  value: string = 'the empire strikes back';
 
   constructor() {}
 

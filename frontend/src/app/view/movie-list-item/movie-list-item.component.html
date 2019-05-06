@@ -1,0 +1,21 @@
+<mat-card fxLayout="column" (mouseenter)="raised=true" (mouseleave)="raised=false" [class.mat-elevation-z3]="!raised"
+  [class.mat-elevation-z8]="raised">
+
+  <div class="cover" mat-card-image fxFlex="5 0 auto">
+    <div class="poster" [ngStyle]="{ 'background-image': 'url(' + movie.poster + ')'}"></div>
+  </div>
+
+  <mat-card-header fxFlex fxLayout="column">
+    <mat-card-title>
+      {{ movie.title }}
+    </mat-card-title>
+    <span *ngIf="movie.release" class="release">
+      Release: {{ movie.release | date }}
+    </span>
+  </mat-card-header>
+
+  <mat-card-footer fxFlex="0 1 48px">
+    {{ movie.genres.join(', ') }}
+  </mat-card-footer>
+
+</mat-card>
