@@ -7,13 +7,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AngularMaterialModule } from './lib/angular-material.module';
 import { HeroComponent } from './view/hero/hero.component';
+import { MovieDetailsComponent } from './view/movie-details/movie-details.component';
 import { MovieListItemComponent } from './view/movie-list-item/movie-list-item.component';
 import { MovieListComponent } from './view/movie-list/movie-list.component';
 import { SearchBoxComponent } from './view/search-box/search-box.component';
-import { MovieDetailsComponent } from './view/movie-details/movie-details.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchBoxComponent, HeroComponent, MovieListComponent, MovieListItemComponent, MovieDetailsComponent],
+  declarations: [
+    AppComponent,
+    SearchBoxComponent,
+    HeroComponent,
+    MovieListComponent,
+    MovieListItemComponent,
+    MovieDetailsComponent
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -24,4 +31,4 @@ import { MovieDetailsComponent } from './view/movie-details/movie-details.compon
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
