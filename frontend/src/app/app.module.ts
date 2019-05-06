@@ -10,9 +10,10 @@ import { HeroComponent } from './view/hero/hero.component';
 import { MovieListItemComponent } from './view/movie-list-item/movie-list-item.component';
 import { MovieListComponent } from './view/movie-list/movie-list.component';
 import { SearchBoxComponent } from './view/search-box/search-box.component';
+import { MovieDetailsComponent } from './view/movie-details/movie-details.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchBoxComponent, HeroComponent, MovieListComponent, MovieListItemComponent],
+  declarations: [AppComponent, SearchBoxComponent, HeroComponent, MovieListComponent, MovieListItemComponent, MovieDetailsComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
