@@ -1,3 +1,7 @@
+<p>
+  <a href="https://travis-ci.org/charlesferreira/arctouch-upcoming-movies"><img src="https://travis-ci.org/charlesferreira/arctouch-upcoming-movies.svg" alt="Build Status"></a>
+</p>
+
 # Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
