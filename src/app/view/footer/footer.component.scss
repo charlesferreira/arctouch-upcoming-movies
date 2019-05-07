@@ -1,0 +1,16 @@
+@import "./../../../colors";
+
+mat-card {
+  padding: 3rem 2rem 3.5rem;
+  text-align: center;
+  background: #f6f6f6;
+}
+
+.love {
+  color: rgba($color-primary, 0.85);
+  font-size: 120%;
+}
+
+a {
+  color: inherit;
+}

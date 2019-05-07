@@ -11,6 +11,7 @@ import { MovieDetailsComponent } from './view/movie-details/movie-details.compon
 import { MovieListItemComponent } from './view/movie-list-item/movie-list-item.component';
 import { MovieListComponent } from './view/movie-list/movie-list.component';
 import { SearchBoxComponent } from './view/search-box/search-box.component';
+import { FooterComponent } from './view/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SearchBoxComponent } from './view/search-box/search-box.component';
     HeroComponent,
     MovieListComponent,
     MovieListItemComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
