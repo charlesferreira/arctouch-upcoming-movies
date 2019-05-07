@@ -29,6 +29,7 @@ import { SearchBoxComponent } from './view/search-box/search-box.component';
     FlexLayoutModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [MovieDetailsComponent]
 })
-export class AppModule {}
+export class AppModule { }
