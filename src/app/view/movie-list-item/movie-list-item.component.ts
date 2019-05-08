@@ -25,4 +25,5 @@ export class MovieListItemComponent implements OnInit {
     };
     this.dialog.open(MovieDetailsComponent, { data });
   }
+
 }

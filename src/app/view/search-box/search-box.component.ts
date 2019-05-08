@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-search-box',
@@ -6,10 +6,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./search-box.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class SearchBoxComponent implements OnInit {
-  value: string = 'the empire strikes back';
+export class SearchBoxComponent {
 
-  constructor() {}
+  value: string;
 
-  ngOnInit() {}
 }

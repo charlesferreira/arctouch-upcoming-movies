@@ -9,6 +9,7 @@ import { MovieService } from './../../service/movie.service';
   styleUrls: ['./movie-list.component.scss']
 })
 export class MovieListComponent implements OnInit {
+
   movies: Movie[];
 
   cols: number;
@@ -38,4 +39,5 @@ export class MovieListComponent implements OnInit {
 
     this.cols = cols;
   }
+
 }
