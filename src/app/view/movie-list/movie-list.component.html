@@ -6,10 +6,12 @@
     {{ searchTerms }}
   </h2>
 
-  <mat-grid-list [cols]="cols" rowHeight="4:3" (window:resize)="onResize($event)">
-    <mat-grid-tile *ngFor="let movie of movies | async">
+  <mat-grid-list [cols]=" cols" rowHeight="4:3" (window:resize)="onResize($event)">
+    <mat-grid-tile *ngFor="let movie of movies">
       <app-movie-list-item [movie]="movie"></app-movie-list-item>
     </mat-grid-tile>
   </mat-grid-list>
+
+  <button mat-button color="accent" (click)="loadNextPage()">Load more</button>
 
 </mat-card>

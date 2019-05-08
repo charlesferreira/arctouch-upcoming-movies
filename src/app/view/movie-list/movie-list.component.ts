@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 
 import { Movie } from './../../model/movie';
 import { MovieService } from './../../service/movie.service';
@@ -13,7 +12,7 @@ export class MovieListComponent implements OnInit {
 
   cols: number;
 
-  movies: Observable<Movie[]>;
+  movies: Movie[] = [];
 
   searchTerms = "the empire strikes back";
 
@@ -21,11 +20,15 @@ export class MovieListComponent implements OnInit {
 
   ngOnInit() {
     this.adjustColumns(window.innerWidth);
-    this.movies = this.movieService.getMovies();
+    this.movieService.getUpcoming().subscribe(movies => this.movies = movies);
   }
 
   onResize(event: any) {
     this.adjustColumns(event.target.innerWidth);
+  }
+
+  loadNextPage() {
+    this.movieService.loadNextPage().subscribe(movies => this.movies = this.movies.concat(movies));
   }
 
   adjustColumns(windowWidth: number) {

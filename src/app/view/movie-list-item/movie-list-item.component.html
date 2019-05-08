@@ -2,7 +2,9 @@
   [class.mat-elevation-z3]="!raised" [class.mat-elevation-z10]="raised" matRipple>
 
   <div class="cover" mat-card-image fxFlex="5 0 auto">
-    <div class="poster" [ngStyle]="{ 'background-image': 'url(' + (movie.backdrop || movie.poster) + ')'}"></div>
+    <div class="poster"
+      [ngStyle]="{ 'background-image': 'url(' + (movie.backdrop || movie.poster || '/assets/images/missing.jpg') + ')'}">
+    </div>
   </div>
 
   <mat-card-header fxFlex fxLayout="column">
