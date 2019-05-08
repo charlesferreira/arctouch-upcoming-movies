@@ -26,6 +26,7 @@ export class SearchBoxComponent implements OnInit {
   }
 
   reset() {
+    this.searchInput.nativeElement.value = '';
     this.moviesService.search('');
   }
 

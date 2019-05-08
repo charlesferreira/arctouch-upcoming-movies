@@ -1,17 +1,23 @@
-<mat-card class="mat-elevation-z0">
+<div>
+  <mat-toolbar class="mat-elevation-z2">
+    Upcoming Movies
+  </mat-toolbar>
 
-  <h2 *ngIf="!movieService.query">Place your bets for the next big hit!</h2>
-  <h2 *ngIf="movieService.query" class="search-terms">
-    <span>Showing results for:</span>
-    {{ movieService.query }}
-  </h2>
+  <mat-card class="mat-elevation-z0">
 
-  <mat-grid-list [cols]=" cols" rowHeight="4:3" (window:resize)="onResize($event)">
-    <mat-grid-tile *ngFor="let movie of movieService.getMovies() | async">
-      <app-movie-list-item [movie]="movie"></app-movie-list-item>
-    </mat-grid-tile>
-  </mat-grid-list>
+    <h2 *ngIf="!movieService.query">Place your bets for the next big hit!</h2>
+    <h2 *ngIf="movieService.query" class="search-terms">
+      <span>Showing results for:</span>
+      {{ movieService.query }}
+    </h2>
 
-  <mat-spinner color="primary" *ngIf="movieService.loading"></mat-spinner>
+    <mat-grid-list [cols]=" cols" rowHeight="4:3" (window:resize)="onResize($event)">
+      <mat-grid-tile *ngFor="let movie of movieService.getMovies() | async">
+        <app-movie-list-item [movie]="movie"></app-movie-list-item>
+      </mat-grid-tile>
+    </mat-grid-list>
 
-</mat-card>
+    <mat-spinner color="primary" *ngIf="movieService.loading"></mat-spinner>
+
+  </mat-card>
+</div>

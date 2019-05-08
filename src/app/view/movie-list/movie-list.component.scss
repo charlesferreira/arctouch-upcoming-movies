@@ -1,5 +1,13 @@
 @import "./../../../mixins";
 
+.mat-toolbar {
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  padding: 2rem;
+  font-weight: 600;
+}
+
 mat-card {
   background: #eee;
 }
