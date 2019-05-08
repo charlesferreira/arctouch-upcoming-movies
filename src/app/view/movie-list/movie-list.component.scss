@@ -4,17 +4,16 @@ mat-card {
   background: #eee;
 }
 
-.search-terms {
-  display: none;
+h2 {
   margin-top: 5%;
-  padding: 2rem 0;
+  padding: 3rem 2rem;
   text-align: center;
-  @include responsive(font-size, 95%, 100%, 105%, 115%, 130%);
+  @include responsive(font-size, 150%, $md: 175%, $lg: 200%);
 
   span {
     display: block;
-    margin-top: 0.5rem;
-    font-size: 130%;
-    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 85%;
+    font-weight: 300;
   }
 }

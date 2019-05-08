@@ -15,6 +15,8 @@ export class MovieListComponent implements OnInit {
 
   movies: Observable<Movie[]>;
 
+  searchTerms = "the empire strikes back";
+
   constructor(private movieService: MovieService) { }
 
   ngOnInit() {

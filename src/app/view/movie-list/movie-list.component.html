@@ -1,9 +1,10 @@
 <mat-card class="mat-elevation-z0">
 
-  <div class="search-terms">
-    Showing results for:
-    <span>the empire strikes back</span>
-  </div>
+  <h2 *ngIf="!searchTerms">Place your bets for the next big hit</h2>
+  <h2 *ngIf="searchTerms" class="search-terms">
+    <span>Showing results for:</span>
+    {{ searchTerms }}
+  </h2>
 
   <mat-grid-list [cols]="cols" rowHeight="4:3" (window:resize)="onResize($event)">
     <mat-grid-tile *ngFor="let movie of movies | async">
