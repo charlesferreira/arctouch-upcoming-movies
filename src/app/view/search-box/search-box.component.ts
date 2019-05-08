@@ -1,4 +1,7 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { fromEvent } from 'rxjs';
+import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
+import { MovieService } from 'src/app/service/movie.service';
 
 @Component({
   selector: 'app-search-box',
@@ -6,8 +9,24 @@ import { Component, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./search-box.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class SearchBoxComponent {
+export class SearchBoxComponent implements OnInit {
 
-  value: string;
+  @ViewChild('searchInput') searchInput: ElementRef;
+
+  constructor(public moviesService: MovieService) { }
+
+  ngOnInit() {
+    fromEvent(this.searchInput.nativeElement, 'keyup')
+      .pipe(
+        map((event: any) => event.target.value),
+        debounceTime(500),
+        distinctUntilChanged()
+      )
+      .subscribe((query: string) => this.moviesService.search(query));
+  }
+
+  reset() {
+    this.moviesService.search('');
+  }
 
 }

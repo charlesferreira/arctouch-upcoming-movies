@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Movie } from './../../model/movie';
 import { MovieService } from './../../service/movie.service';
 
 @Component({
@@ -12,31 +11,15 @@ export class MovieListComponent implements OnInit {
 
   cols: number;
 
-  movies: Movie[] = [];
-
-  searchTerms = "the empire strikes back";
-
-  loadingContent = true;
-
-  constructor(private movieService: MovieService) { }
-
-  private updateMovies = (movies: Movie[]) => {
-    this.movies = movies;
-    this.loadingContent = false;
-  }
+  constructor(public movieService: MovieService) { }
 
   ngOnInit() {
+    this.movieService.loadUpcoming();
     this.adjustColumns(window.innerWidth);
-    this.movieService.getUpcoming().subscribe(movies => this.updateMovies(movies));
   }
 
   onResize(event: any) {
     this.adjustColumns(event.target.innerWidth);
-  }
-
-  loadNextPage() {
-    this.loadingContent = true;
-    this.movieService.loadNextPage().subscribe(movies => this.updateMovies(this.movies.concat(movies)));
   }
 
   adjustColumns(windowWidth: number) {
