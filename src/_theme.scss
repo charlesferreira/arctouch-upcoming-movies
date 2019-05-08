@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:100,100i,300,300i,600");
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import "colors";
 
 // Typography
 $custom-typography: mat-typography-config(
@@ -11,9 +12,9 @@ $custom-typography: mat-typography-config(
 @include mat-core($custom-typography);
 
 // Colors
-$movies-primary: mat-palette($mat-grey, A100);
-$movies-secondary: mat-palette($mat-pink);
-$movies-theme: mat-light-theme($movies-primary, $movies-secondary);
+$movies-primary: mat-palette($app-red, 500);
+$movies-accent: mat-palette($app-red, A100);
+$movies-theme: mat-light-theme($movies-primary, $movies-accent);
 
 @include angular-material-theme($movies-theme);
 

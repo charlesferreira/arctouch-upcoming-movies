@@ -16,11 +16,18 @@ export class MovieListComponent implements OnInit {
 
   searchTerms = "the empire strikes back";
 
+  loadingContent = true;
+
   constructor(private movieService: MovieService) { }
+
+  private updateMovies = (movies: Movie[]) => {
+    this.movies = movies;
+    this.loadingContent = false;
+  }
 
   ngOnInit() {
     this.adjustColumns(window.innerWidth);
-    this.movieService.getUpcoming().subscribe(movies => this.movies = movies);
+    this.movieService.getUpcoming().subscribe(movies => this.updateMovies(movies));
   }
 
   onResize(event: any) {
@@ -28,7 +35,8 @@ export class MovieListComponent implements OnInit {
   }
 
   loadNextPage() {
-    this.movieService.loadNextPage().subscribe(movies => this.movies = this.movies.concat(movies));
+    this.loadingContent = true;
+    this.movieService.loadNextPage().subscribe(movies => this.updateMovies(this.movies.concat(movies)));
   }
 
   adjustColumns(windowWidth: number) {

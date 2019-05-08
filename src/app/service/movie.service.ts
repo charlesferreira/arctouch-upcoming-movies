@@ -29,6 +29,6 @@ export class MovieService {
   }
 
   loadNextPage(): Observable<Movie[]> {
-    return this.request(this.url, this.params, this.page + 1).pipe(delay(2000));
+    return this.request(this.url, this.params, this.page + 1);
   }
 }

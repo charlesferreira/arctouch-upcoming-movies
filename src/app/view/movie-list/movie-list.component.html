@@ -12,6 +12,8 @@
     </mat-grid-tile>
   </mat-grid-list>
 
-  <button mat-button color="accent" (click)="loadNextPage()">Load more</button>
+  <div infiniteScroll [infiniteScrollDistance]="0.5" [infiniteScrollThrottle]="500" (scrolled)="loadNextPage()"></div>
+
+  <mat-spinner color="primary" *ngIf="loadingContent"></mat-spinner>
 
 </mat-card>
