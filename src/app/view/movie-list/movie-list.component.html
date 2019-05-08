@@ -6,7 +6,7 @@
   </div>
 
   <mat-grid-list [cols]="cols" rowHeight="4:3" (window:resize)="onResize($event)">
-    <mat-grid-tile *ngFor="let movie of movies">
+    <mat-grid-tile *ngFor="let movie of movies | async">
       <app-movie-list-item [movie]="movie"></app-movie-list-item>
     </mat-grid-tile>
   </mat-grid-list>

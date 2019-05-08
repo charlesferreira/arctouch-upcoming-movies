@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { Movie } from './../model/movie';
 
@@ -7,12 +10,15 @@ import { Movie } from './../model/movie';
 })
 export class MovieService {
 
-  data: Movie[];
+  private apiUrl = 'http://localhost:8080/v1/movies/upcoming';
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getMovies(): Movie[] {
-    return this.data;
+  getMovies(): Observable<Movie[]> {
+    return this.http.get<Movie[]>(this.apiUrl).pipe(map(res => {
+      console.log(res);
+      return res;
+    }));
   }
 
 }

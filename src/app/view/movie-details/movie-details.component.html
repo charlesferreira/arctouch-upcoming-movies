@@ -1,4 +1,16 @@
 <mat-tab-group>
+  <mat-tab label="Poster">
+    <img [src]="movie.poster">
+  </mat-tab>
+
+  <mat-tab label="Overview">
+    <mat-card [class.mat-elevation-z0]="true">
+      <p>
+        {{ movie.overview }}
+      </p>
+    </mat-card>
+  </mat-tab>
+
   <mat-tab label="Info">
     <mat-card [class.mat-elevation-z0]="true">
       <h3>Title</h3>
@@ -10,16 +22,5 @@
       <h3>Genres</h3>
       <p>{{ movie.genres.join(', ') | titlecase }}</p>
     </mat-card>
-
-  </mat-tab>
-  <mat-tab label="Overview">
-    <mat-card [class.mat-elevation-z0]="true">
-      <p>
-        {{ movie.overview }}
-      </p>
-    </mat-card>
-  </mat-tab>
-  <mat-tab label="Poster">
-    <img [src]="movie.poster">
   </mat-tab>
 </mat-tab-group>
