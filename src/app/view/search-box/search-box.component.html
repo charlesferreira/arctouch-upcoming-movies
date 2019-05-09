@@ -1,9 +1,9 @@
 <div class="search-box">
   <mat-form-field appearance="outline">
     <mat-label>Looking for a specific title?</mat-label>
-    <input matInput placeholder="" #searchInput>
-    <button mat-button *ngIf="searchInput.value" matSuffix mat-icon-button aria-label="Clear" (click)="reset()">
-      <mat-icon>close</mat-icon>
+    <input type="search" matInput [(ngModel)]="query" (keydown.enter)="search()" #input>
+    <button mat-icon-button matSuffix aria-label="search" (click)="search()">
+      <mat-icon>search</mat-icon>
     </button>
   </mat-form-field>
 </div>
