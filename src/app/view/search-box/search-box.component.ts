@@ -10,10 +10,9 @@ import { MovieService } from 'src/app/service/movie.service';
   encapsulation: ViewEncapsulation.None
 })
 export class SearchBoxComponent implements OnInit {
-
   @ViewChild('searchInput') searchInput: ElementRef;
 
-  constructor(public moviesService: MovieService) { }
+  constructor(private moviesService: MovieService) {}
 
   ngOnInit() {
     fromEvent(this.searchInput.nativeElement, 'keyup')
@@ -22,12 +21,13 @@ export class SearchBoxComponent implements OnInit {
         debounceTime(500),
         distinctUntilChanged()
       )
-      .subscribe((query: string) => this.moviesService.search(query));
+      .subscribe((query: string) => {
+        this.moviesService.search(query);
+      });
   }
 
   reset() {
     this.searchInput.nativeElement.value = '';
     this.moviesService.search('');
   }
-
 }

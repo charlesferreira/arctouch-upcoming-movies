@@ -5,10 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 
 import { AppComponent } from './app.component';
 import { AngularMaterialModule } from './lib/angular-material.module';
 import { MovieListInterceptorService } from './service/movie-list-interceptor.service';
+import { easeInOutSine } from './util/easing-logic';
 import { FooterComponent } from './view/footer/footer.component';
 import { HeroComponent } from './view/hero/hero.component';
 import { MovieDetailsComponent } from './view/movie-details/movie-details.component';
@@ -33,14 +35,20 @@ import { SearchBoxComponent } from './view/search-box/search-box.component';
     FormsModule,
     HttpClientModule,
     FlexLayoutModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    NgxPageScrollCoreModule.forRoot({
+      duration: 1500,
+      easingLogic: easeInOutSine
+    })
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: MovieListInterceptorService,
-    multi: true
-  }],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: MovieListInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
   entryComponents: [MovieDetailsComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
+import { PageScrollService } from 'ngx-page-scroll-core';
 import { Observable } from 'rxjs';
 import { Movie } from 'src/app/model/movie';
 
@@ -12,7 +14,11 @@ import { MovieService } from './../../service/movie.service';
 export class MovieListComponent implements OnInit {
   cols: number;
 
-  constructor(private movieService: MovieService) {}
+  constructor(
+    private movieService: MovieService,
+    private pageScrollService: PageScrollService,
+    @Inject(DOCUMENT) private document: any
+  ) {}
 
   get query(): string {
     return this.movieService.query;
@@ -49,5 +55,18 @@ export class MovieListComponent implements OnInit {
 
   onScroll() {
     this.movieService.loadNextPage();
+  }
+
+  resetUpcomingMovies() {
+    this.movieService.loadUpcoming(true);
+  }
+
+  resetSearch() {
+    this.movieService.query = '';
+
+    this.pageScrollService.scroll({
+      document: this.document,
+      scrollTarget: '#top'
+    });
   }
 }
