@@ -38,7 +38,9 @@ allows the client to scroll the page automatically, for more fluid user experien
 
 ## Demo
 
-You can try a [demo](https://upcoming-movies-client.herokuapp.com/) running on Heroku *(please notice that the first request might take quite long to return, since Heroku puts the app to sleep from time to time)*.
+You can try a [demo](https://upcoming-movies-client.herokuapp.com/) running on Heroku*.
+
+\* *Please notice that the first request might take quite long to return, since Heroku puts the app to sleep from time to time.*
 
 
 [CORS]: https://pt.wikipedia.org/wiki/Cross-origin_resource_sharing
