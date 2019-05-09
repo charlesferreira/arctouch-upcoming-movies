@@ -5,17 +5,17 @@
   z-index: 1000;
   top: 0;
   padding: 2rem;
-  font-weight: 600;
 
   .spacer {
     flex: 1 1 auto;
   }
 
   button {
-    font-size: 100%;
+    @include responsive(font-size, 80%, $md: 100%);
+    font-weight: 600;
 
     img {
-      width: 40px;
+      height: 40px;
       margin: 0.25rem;
     }
   }

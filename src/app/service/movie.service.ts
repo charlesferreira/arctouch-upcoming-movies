@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { PageScrollService } from 'ngx-page-scroll-core';
 import { Observable, of } from 'rxjs';
-import { delay } from 'rxjs/operators';
 
 import { Movie } from './../model/movie';
 import { ApiService } from './api.service';
@@ -74,13 +73,9 @@ export class MovieService {
   }
 
   private scrollToTop() {
-    of([])
-      .pipe(delay(100))
-      .subscribe(e => {
-        this.pageScrollService.scroll({
-          document: this.document,
-          scrollTarget: '#toolbar'
-        });
-      });
+    this.pageScrollService.scroll({
+      document: this.document,
+      scrollTarget: '#toolbar'
+    });
   }
 }

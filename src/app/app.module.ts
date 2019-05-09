@@ -10,7 +10,6 @@ import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { AppComponent } from './app.component';
 import { AngularMaterialModule } from './lib/angular-material.module';
 import { MovieListInterceptorService } from './service/movie-list-interceptor.service';
-import { easeInOutSine } from './util/easing-logic';
 import { FooterComponent } from './view/footer/footer.component';
 import { HeroComponent } from './view/hero/hero.component';
 import { MovieDetailsComponent } from './view/movie-details/movie-details.component';
@@ -37,8 +36,8 @@ import { SearchBoxComponent } from './view/search-box/search-box.component';
     FlexLayoutModule,
     InfiniteScrollModule,
     NgxPageScrollCoreModule.forRoot({
-      duration: 1500,
-      easingLogic: easeInOutSine
+      duration: 500,
+      interruptible: false
     })
   ],
   providers: [

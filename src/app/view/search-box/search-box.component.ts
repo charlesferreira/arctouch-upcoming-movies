@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { fromEvent } from 'rxjs';
-import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
+import { debounceTime, map } from 'rxjs/operators';
 import { MovieService } from 'src/app/service/movie.service';
 
 @Component({
@@ -18,8 +18,8 @@ export class SearchBoxComponent implements OnInit {
     fromEvent(this.searchInput.nativeElement, 'keyup')
       .pipe(
         map((event: any) => event.target.value),
-        debounceTime(500),
-        distinctUntilChanged()
+        debounceTime(500)
+        // distinctUntilChanged()
       )
       .subscribe((query: string) => {
         this.moviesService.search(query);
