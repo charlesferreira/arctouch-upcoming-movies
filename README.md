@@ -36,7 +36,7 @@ allows the client to request more content when getting close to the end of the p
 allows the client to scroll the page automatically, for more fluid user experience
 
 
-# Known issues
+## Known issues
 
 * Backdrop images for the cards in the movies list are not loading in iPhone 6s
 * The movies' details poster image is broken on mobile devices when in landscape orientation
