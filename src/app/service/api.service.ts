@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
-  private baseUrl = 'http://localhost:8080/v1';
+  private baseUrl = 'https://upcoming-movies-api.herokuapp.com/v1';
 
   urlFor(endpoint: string): string {
     return this.baseUrl + endpoint;
