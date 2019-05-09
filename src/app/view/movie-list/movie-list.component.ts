@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Movie } from 'src/app/model/movie';
 
 import { MovieService } from './../../service/movie.service';
 
@@ -8,10 +10,21 @@ import { MovieService } from './../../service/movie.service';
   styleUrls: ['./movie-list.component.scss']
 })
 export class MovieListComponent implements OnInit {
-
   cols: number;
 
-  constructor(public movieService: MovieService) { }
+  constructor(private movieService: MovieService) {}
+
+  get query(): string {
+    return this.movieService.query;
+  }
+
+  get movies(): Observable<Movie[]> {
+    return this.movieService.getMovies();
+  }
+
+  get isLoading(): boolean {
+    return this.movieService.isLoading;
+  }
 
   ngOnInit() {
     this.movieService.loadUpcoming();
@@ -34,4 +47,7 @@ export class MovieListComponent implements OnInit {
     }
   }
 
+  onScroll() {
+    this.movieService.loadNextPage();
+  }
 }

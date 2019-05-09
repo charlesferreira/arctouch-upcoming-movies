@@ -5,19 +5,21 @@
 
   <mat-card class="mat-elevation-z0">
 
-    <h2 *ngIf="!movieService.query">Place your bets for the next big hit!</h2>
-    <h2 *ngIf="movieService.query" class="search-terms">
+    <h2 *ngIf="!query">Place your bets for the next big hit</h2>
+    <h2 *ngIf="query" class="search-terms">
       <span>Showing results for:</span>
-      {{ movieService.query }}
+      {{ query }}
     </h2>
 
     <mat-grid-list [cols]=" cols" rowHeight="4:3" (window:resize)="onResize($event)">
-      <mat-grid-tile *ngFor="let movie of movieService.getMovies() | async">
+      <mat-grid-tile *ngFor="let movie of movies | async">
         <app-movie-list-item [movie]="movie"></app-movie-list-item>
       </mat-grid-tile>
     </mat-grid-list>
 
-    <mat-spinner color="primary" *ngIf="movieService.loading"></mat-spinner>
+    <div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()"></div>
+
+    <mat-spinner color="primary" *ngIf="isLoading"></mat-spinner>
 
   </mat-card>
 </div>
