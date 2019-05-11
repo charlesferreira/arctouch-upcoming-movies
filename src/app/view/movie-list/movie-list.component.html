@@ -4,7 +4,9 @@
       <img src="/assets/images/logo.svg">
       Upcoming Movies
     </button>
+
     <span class="spacer"></span>
+
     <button mat-icon-button color="primary" (click)="resetSearch()">
       <mat-icon class="icon">search</mat-icon>
     </button>
@@ -18,11 +20,12 @@
       {{ query }}
     </h2>
 
-    <mat-grid-list [cols]=" cols" rowHeight="4:3" (window:resize)="onResize($event)">
-      <mat-grid-tile *ngFor="let movie of movies | async">
-        <app-movie-list-item [movie]="movie"></app-movie-list-item>
-      </mat-grid-tile>
-    </mat-grid-list>
+    <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="stretch" class="list">
+      <app-movie-list-item fxLayout="column" fxFlex="1 0 calc(25% - 16px)" fxFlex.lt-lg="1 0 calc(33% - 16px)"
+        fxFlex.lt-md="1 0 calc(50% - 16px)" fxFlex.lt-sm="0 1" [movie]="movie" *ngFor="let movie of movies | async"
+        class="item">
+      </app-movie-list-item>
+    </div>
 
     <div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()"></div>
 

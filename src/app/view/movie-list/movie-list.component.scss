@@ -22,12 +22,13 @@
 }
 
 mat-card {
+  padding: 0;
   background: #eee;
 }
 
 h2 {
   margin-top: 5%;
-  padding: 3rem 2rem;
+  padding: 4rem 2rem;
   text-align: center;
   @include responsive(font-size, 150%, $md: 175%, $lg: 200%);
 
@@ -37,6 +38,10 @@ h2 {
     font-size: 85%;
     font-weight: 300;
   }
+}
+
+.list {
+  padding-left: 16px;
 }
 
 mat-spinner {

@@ -1,13 +1,11 @@
-<mat-card fxLayout="column" (click)="showDetailsDialog()" (mouseenter)="raised=true" (mouseleave)="raised=false"
-  [class.mat-elevation-z3]="!raised" [class.mat-elevation-z10]="raised" matRipple>
+<mat-card (click)="showDetailsDialog()" (mouseenter)="raised=true" (mouseleave)="raised=false"
+  [class.mat-elevation-z3]="!raised" [class.mat-elevation-z10]="raised" matRipple fxLayout="column" fxFlex="1 0 auto">
 
-  <div class="cover" mat-card-image fxFlex="5 0 auto">
-    <div class="poster"
-      [ngStyle]="{ 'background-image': 'url(' + (movie.backdrop || movie.poster || '/assets/images/missing.jpg') + ')'}">
-    </div>
+  <div mat-card-image>
+    <img [src]="movie.backdrop || movie.poster || '/assets/images/missing.jpg'">
   </div>
 
-  <mat-card-header fxFlex fxLayout="column">
+  <mat-card-header fxLayout="column">
     <mat-card-title>
       {{ movie.title }}
     </mat-card-title>
@@ -16,7 +14,7 @@
     </span>
   </mat-card-header>
 
-  <mat-card-footer fxFlex="0 1 48px">
+  <mat-card-footer>
     {{ movie.genres.join(', ') | titlecase }}
   </mat-card-footer>
 

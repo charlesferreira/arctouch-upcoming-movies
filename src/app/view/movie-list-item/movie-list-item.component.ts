@@ -10,20 +10,18 @@ import { MovieDetailsComponent } from '../movie-details/movie-details.component'
   styleUrls: ['./movie-list-item.component.scss']
 })
 export class MovieListItemComponent implements OnInit {
-
   @Input() movie: Movie;
 
   raised = false;
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog) {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   showDetailsDialog() {
     const data = {
-      movie: this.movie,
+      movie: this.movie
     };
     this.dialog.open(MovieDetailsComponent, { data });
   }
-
 }

@@ -5,7 +5,6 @@ import {
   MatDialogModule,
   MatDividerModule,
   MatFormFieldModule,
-  MatGridListModule,
   MatIconModule,
   MatInputModule,
   MatProgressSpinnerModule,
@@ -22,13 +21,12 @@ import {
     MatDialogModule,
     MatDividerModule,
     MatFormFieldModule,
-    MatGridListModule,
     MatIconModule,
     MatInputModule,
     MatProgressSpinnerModule,
     MatRippleModule,
     MatTabsModule,
-    MatToolbarModule,
+    MatToolbarModule
   ],
   exports: [
     MatButtonModule,
@@ -36,13 +34,12 @@ import {
     MatDialogModule,
     MatDividerModule,
     MatFormFieldModule,
-    MatGridListModule,
     MatIconModule,
     MatInputModule,
     MatProgressSpinnerModule,
     MatRippleModule,
     MatTabsModule,
-    MatToolbarModule,
+    MatToolbarModule
   ]
 })
-export class AngularMaterialModule { }
+export class AngularMaterialModule {}
