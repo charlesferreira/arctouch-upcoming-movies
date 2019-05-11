@@ -1,7 +1,8 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { PageScrollService } from 'ngx-page-scroll-core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 import { Movie } from 'src/app/model/movie';
 
 import { MovieService } from './../../service/movie.service';
@@ -18,7 +19,7 @@ export class MovieListComponent implements OnInit {
     private movieService: MovieService,
     private pageScrollService: PageScrollService,
     @Inject(DOCUMENT) private document: any
-  ) {}
+  ) { }
 
   get query(): string {
     return this.movieService.query;
@@ -62,11 +63,10 @@ export class MovieListComponent implements OnInit {
   }
 
   resetSearch() {
-    this.movieService.query = '';
-
     this.pageScrollService.scroll({
       document: this.document,
       scrollTarget: '#top'
     });
+    of([]).pipe(delay(500)).subscribe(() => this.document.querySelector('input').focus());
   }
 }

@@ -1,6 +1,7 @@
-import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { fromEvent } from 'rxjs';
-import { debounceTime, map } from 'rxjs/operators';
+import { DOCUMENT } from '@angular/common';
+import { Component, ElementRef, Inject, ViewChild, ViewEncapsulation } from '@angular/core';
+import { of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 import { MovieService } from 'src/app/service/movie.service';
 
 @Component({
@@ -9,25 +10,15 @@ import { MovieService } from 'src/app/service/movie.service';
   styleUrls: ['./search-box.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class SearchBoxComponent implements OnInit {
-  @ViewChild('searchInput') searchInput: ElementRef;
+export class SearchBoxComponent {
+  query = '';
 
-  constructor(private moviesService: MovieService) {}
+  @ViewChild('input') input: ElementRef;
 
-  ngOnInit() {
-    fromEvent(this.searchInput.nativeElement, 'keyup')
-      .pipe(
-        map((event: any) => event.target.value),
-        debounceTime(500)
-        // distinctUntilChanged()
-      )
-      .subscribe((query: string) => {
-        this.moviesService.search(query);
-      });
-  }
+  constructor(private moviesService: MovieService, @Inject(DOCUMENT) private document: any) { }
 
-  reset() {
-    this.searchInput.nativeElement.value = '';
-    this.moviesService.search('');
+  search() {
+    this.moviesService.search(this.query);
+    of([]).pipe(delay(100)).subscribe(() => this.document.querySelector('input').blur());
   }
 }

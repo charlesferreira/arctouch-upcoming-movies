@@ -1,11 +1,9 @@
 @import "../../../mixins";
 
-.search-box,
-input,
 mat-form-field {
-  box-sizing: border-box;
   width: 100%;
 }
+
 .mat-form-field-appearance-outline .mat-form-field-outline {
   color: white !important;
 }
