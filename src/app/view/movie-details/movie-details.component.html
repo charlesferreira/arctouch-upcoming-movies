@@ -1,0 +1,28 @@
+<mat-tab-group>
+  <mat-tab label="Poster" *ngIf="movie.poster">
+    <img [src]="movie.poster">
+  </mat-tab>
+
+  <mat-tab label="Overview" *ngIf="movie.overview">
+    <mat-card [class.mat-elevation-z0]="true">
+      <p>
+        {{ movie.overview }}
+      </p>
+    </mat-card>
+  </mat-tab>
+
+  <mat-tab label="Info">
+    <mat-card [class.mat-elevation-z0]="true">
+      <h3>Title</h3>
+      <p>{{ movie.title }}</p>
+
+      <h3>Release date</h3>
+      <p>{{ (movie.release | date) || 'N/A' }}</p>
+
+      <div *ngIf="movie.genres.length > 0">
+        <h3>Genres</h3>
+        <p>{{ movie.genres.join(', ') | titlecase }}</p>
+      </div>
+    </mat-card>
+  </mat-tab>
+</mat-tab-group>

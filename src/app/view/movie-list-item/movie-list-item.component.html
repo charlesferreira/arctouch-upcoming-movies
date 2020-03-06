@@ -1,0 +1,21 @@
+<mat-card (click)="showDetailsDialog()" (mouseenter)="raised=true" (mouseleave)="raised=false"
+  [class.mat-elevation-z3]="!raised" [class.mat-elevation-z10]="raised" matRipple fxLayout="column" fxFlex="1 0 auto">
+
+  <div mat-card-image>
+    <img [src]="movie.backdrop || movie.poster || '/assets/images/missing.jpg'">
+  </div>
+
+  <mat-card-header fxLayout="column">
+    <mat-card-title>
+      {{ movie.title }}
+    </mat-card-title>
+    <span *ngIf="movie.release" class="release">
+      {{ movie.release | date }}
+    </span>
+  </mat-card-header>
+
+  <mat-card-footer>
+    {{ movie.genres.join(', ') | titlecase }}
+  </mat-card-footer>
+
+</mat-card>

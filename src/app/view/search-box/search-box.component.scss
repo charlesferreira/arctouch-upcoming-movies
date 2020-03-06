@@ -1,0 +1,13 @@
+@import "../../../mixins";
+
+mat-form-field {
+  width: 100%;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: white !important;
+}
+
+.search-box {
+  @include responsive(margin-top, 3rem, $md: 4rem, $lg: 5rem);
+}

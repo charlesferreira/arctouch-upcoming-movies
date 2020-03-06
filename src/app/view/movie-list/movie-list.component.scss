@@ -1,0 +1,53 @@
+@import './../../../mixins';
+
+.mat-toolbar {
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  padding: 2rem;
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  button {
+    @include responsive(font-size, 80%, $md: 100%);
+    font-weight: 600;
+
+    img {
+      height: 40px;
+      margin: 0.25rem;
+    }
+  }
+}
+
+mat-card {
+  padding: 0;
+  background: #eee;
+}
+
+h2 {
+  margin-top: 5%;
+  padding: 4rem 2rem;
+  text-align: center;
+  @include responsive(font-size, 150%, $md: 175%, $lg: 200%);
+
+  span {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 85%;
+    font-weight: 300;
+  }
+}
+
+.list {
+  padding-left: 16px;
+
+  .item {
+    margin-right: 16px;
+  }
+}
+
+mat-spinner {
+  margin: 5% auto 7.5% !important;
+}

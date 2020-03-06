@@ -1,0 +1,35 @@
+<div id="toolbar">
+  <mat-toolbar class="mat-elevation-z2">
+    <button mat-button disableRipple color="primary" (click)="resetUpcomingMovies()">
+      <img src="/assets/images/logo.svg">
+      Upcoming Movies
+    </button>
+
+    <span class="spacer"></span>
+
+    <button mat-icon-button color="primary" (click)="resetSearch()">
+      <mat-icon class="icon">search</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-card class="mat-elevation-z0">
+
+    <h2 *ngIf="!query">Place your bets for the next big hit</h2>
+    <h2 *ngIf="query" class="search-terms">
+      <span>Showing results for:</span>
+      {{ query }}
+    </h2>
+
+    <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="stretch" class="list">
+      <app-movie-list-item fxLayout="column" fxFlex="1 0 calc(25% - 16px)" fxFlex.lt-lg="1 0 calc(33% - 16px)"
+        fxFlex.lt-md="1 0 calc(50% - 16px)" fxFlex.lt-sm="0 1" [movie]="movie" *ngFor="let movie of movies | async"
+        class="item">
+      </app-movie-list-item>
+    </div>
+
+    <div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()"></div>
+
+    <mat-spinner color="primary" *ngIf="isLoading"></mat-spinner>
+
+  </mat-card>
+</div>

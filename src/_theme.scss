@@ -1,0 +1,24 @@
+@import '~@angular/material/theming';
+@import 'colors';
+
+// Typography
+$custom-typography: mat-typography-config(
+  $font-family: 'Raleway, sans-serif'
+);
+
+@include mat-core($custom-typography);
+
+// Colors
+$movies-primary: mat-palette($app-red, 500);
+$movies-accent: mat-palette($app-red, A100);
+$movies-theme: mat-light-theme($movies-primary, $movies-accent);
+
+@include angular-material-theme($movies-theme);
+
+$hero-primary: mat-palette($mat-grey, A100);
+$hero-secondary: mat-palette($mat-pink);
+$hero-theme: mat-dark-theme($hero-primary, $hero-secondary);
+
+app-hero {
+  @include angular-material-theme($hero-theme);
+}

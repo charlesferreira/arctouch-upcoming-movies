@@ -1,0 +1,30 @@
+@import './../../../colors';
+
+mat-card {
+  margin-bottom: 16px;
+  padding: 0;
+  cursor: pointer;
+
+  img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+[mat-card-image] {
+  margin-top: 0;
+}
+
+.release {
+  margin: -8px 16px 8px;
+  font-size: 80%;
+  color: #666;
+}
+
+mat-card-footer {
+  margin-bottom: 0px;
+  padding: 8px 32px;
+  font-size: 80%;
+  background: #fff;
+}
